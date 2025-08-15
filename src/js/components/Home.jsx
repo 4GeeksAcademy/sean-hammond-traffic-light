@@ -1,26 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+const [red, setRed] = useState("on")
+const [yellow, setYellow] = useState("off")
+const [green, setGreen] = useState("off")
+
+
+const glowRed = ()=>{
+	setRed("on");
+}
+const glowYellow = ()=>{
+	setYellow("on");
+}
+const glowGreen = ()=>{
+	setGreen("on");
+}
+
+return (
+		<div>
+			<div 
+				// onClick={()=> {
+				// 	// function...
+				// }} 
+			>
+			</div>
+
+			<div className={`text-center bg-danger-subtle ${red == "on" ? "border border-5 border-danger" : "border border-body" }`} onClick={glowRed} > red light </div><br />
+			<div className={`text-center bg-warning-subtle ${yellow == "on" ? "border border-5 border-warning" : "border border-info" }`} onClick={glowYellow} > yellow light</div><br />
+			<div className={`text-center bg-success-subtle ${green == "on" ? "border border-5 border-success" : "border border-info" }`} onClick={glowGreen} > green light</div>
 		</div>
 	);
 };
