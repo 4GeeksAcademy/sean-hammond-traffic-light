@@ -11,12 +11,18 @@ const [green, setGreen] = useState("off")
 
 const glowRed = ()=>{
 	setRed("on");
+	setYellow("off");
+	setGreen("off");
 }
 const glowYellow = ()=>{
 	setYellow("on");
+	setRed("off");
+	setGreen("off");
 }
 const glowGreen = ()=>{
 	setGreen("on");
+	setYellow("off");
+	setRed("off");
 }
 
 return (
